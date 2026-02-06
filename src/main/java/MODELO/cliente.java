@@ -1,13 +1,19 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package MODELO;
 
-/**
- *
- * @author camper
- */
-public class cliente {
+public class cliente extends Persona{
+    int id;
+
+    public cliente(int id, String nombre, String identificacion, String correo, String telefono) {
+        super(id, nombre, identificacion, correo, telefono);
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
     
 }
