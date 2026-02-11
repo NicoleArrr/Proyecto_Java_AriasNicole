@@ -4,6 +4,8 @@ package CONTROLADOR;
 import MODELO.cliente;
 import java.util.ArrayList;
 
+// Esta interface o contrato denota simplemente los métodos s redefinir en la clase GestionarCliente
+
 public interface GestionarClienteAbs {
 
     void guardar(cliente clt);

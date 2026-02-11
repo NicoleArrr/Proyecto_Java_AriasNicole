@@ -4,6 +4,8 @@ package CONTROLADOR;
 import MODELO.celular;
 import java.util.ArrayList;
 
+// Esta interface o contrato denota simplemente los métodos s redefinir en la clase GestionarCelular
+
 public interface GestionarCelularAbs {
 
     void guardar(celular cel);
