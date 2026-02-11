@@ -11,7 +11,7 @@ public class Conexion {
         try {
             c = DriverManager.getConnection("jdbc:mysql://localhost:3306/TecnoStore", "campus2023", "campus2023");
 //            c=DriverManager.getConnection("jdbc:mysql://"+ip+"/"+database,user,password);
-            System.out.println("CONEXION EXITOSA!");
+            System.out.println("Ya Conectó ¡WOW!");
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
