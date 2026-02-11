@@ -28,20 +28,47 @@ public class Validaciones {
    }
    
    private double validarPrecio(double precio) {
-        do {           
-           try {
-               System.out.println("validando precio");
-               precio = new Scanner (System.in).nextDouble();
-               while (precio < 0){
-                   System.out.println("Precio no válido \n Por favor, escribe un valor mayor a igual a 0");
-                   precio = new Scanner(System.in).nextDouble();
-               }
-           } catch (Exception e){
-               System.out.println("Precio no válido. Solo se aceptan números mayores a iguales a 0");
-           }
-           
-       } while (precio >= 0);
-       return precio;
+    Scanner scanner = new Scanner(System.in);
+
+    do {
+        try {
+            System.out.println("Ingresa el precio:");
+            precio = scanner.nextDouble();
+
+            if (precio < 0) {
+                System.out.println("Precio no válido. Por favor, escribe un valor mayor o igual a 0");
+            }
+
+        } catch (Exception e) {
+            System.out.println("Precio no válido. Solo se aceptan números mayores o iguales a 0");
+            scanner.nextLine();
+        }
+
+    } while (precio < 0);
+
+    return precio;
     }
    
+   private int validarStock(int stock) {
+    Scanner scanner = new Scanner(System.in);
+
+    do {
+        try {
+            System.out.println("Ingresa el stock:");
+            stock = scanner.nextInt();
+
+            if (stock < 0) {
+                System.out.println("Stock no válido. Por favor, escribe un valor mayor o igual a 0");
+            }
+
+        } catch (Exception e) {
+            System.out.println("Stock no válido. Solo se aceptan números enteros mayores o iguales a 0");
+            scanner.nextLine(); // Limpia el buffer para evitar bucle infinito
+        }
+
+    } while (stock < 0); // Repite solo si el stock es inválido
+
+    return stock;
+    }
+       
 }
