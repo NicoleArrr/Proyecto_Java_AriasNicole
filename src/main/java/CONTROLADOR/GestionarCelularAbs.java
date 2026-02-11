@@ -1,6 +1,18 @@
 
 package CONTROLADOR;
 
-public class GestionarCelularAbs {
-    
+import MODELO.celular;
+import java.util.ArrayList;
+
+public interface GestionarCelularAbs {
+
+    void guardar(celular cel);
+
+    void actualizar(celular cel, int id);
+
+    void eliminar(int id);
+
+    ArrayList<celular> listar();
+
+    celular buscar(int id);
 }
