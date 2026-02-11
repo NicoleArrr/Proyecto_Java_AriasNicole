@@ -63,10 +63,10 @@ public class Validaciones {
 
         } catch (Exception e) {
             System.out.println("Stock no válido. Solo se aceptan números enteros mayores o iguales a 0");
-            scanner.nextLine(); // Limpia el buffer para evitar bucle infinito
+            scanner.nextLine();
         }
 
-    } while (stock < 0); // Repite solo si el stock es inválido
+    } while (stock < 0);
 
     return stock;
     }
