@@ -64,10 +64,22 @@ public class GestionarMarca implements GestionarMarcaAbs{
     public void eliminar(int id) {
         try (Connection con = c.conectar()) {
             //La usamos cuando queremos hacer una inserción o modificacion a la base de datos.
-            PreparedStatement ps = con.prepareStatement("delete from area where id=?");
+            PreparedStatement ps = con.prepareStatement("DELETE FROM marca where id=?");
             ps.setInt(1, id);
+            System.out.println("""
+                               -------------------
+                               | ¿Deseas eliminar |  
+                               |    la marca?     |
+                               -------------------
+                               |(Escribe la opción|
+                               | numérica deseada)|
+                               |                  |
+                               |     1) SI        |
+                               |     2) NO        |
+                               -------------------
+                               """);
             int op = new Scanner(System.in).nextInt();
-            if (op == 0) {
+            if (op == 1) {
                 ps.executeUpdate();
                 System.out.println("La marca se ha eliminado");
             } else {
