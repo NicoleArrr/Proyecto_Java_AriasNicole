@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 public interface GestionarMarcaAbs {
 
-    void guardar(marca mrc);
+    void registrar(marca mrc);
 
     void actualizar(marca mrc, int id);
 

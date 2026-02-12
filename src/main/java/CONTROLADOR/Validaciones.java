@@ -28,12 +28,12 @@ public class Validaciones {
    }
    
    private double validarPrecio(double precio) {
-    Scanner scanner = new Scanner(System.in);
+    Scanner sc = new Scanner(System.in);
 
     do {
         try {
             System.out.println("Ingresa el precio:");
-            precio = scanner.nextDouble();
+            precio = sc.nextDouble();
 
             if (precio < 0) {
                 System.out.println("Precio no válido. Por favor, escribe un valor mayor o igual a 0");
@@ -41,7 +41,7 @@ public class Validaciones {
 
         } catch (Exception e) {
             System.out.println("Precio no válido. Solo se aceptan números mayores o iguales a 0");
-            scanner.nextLine();
+            sc.nextLine();
         }
 
     } while (precio < 0);
@@ -50,12 +50,12 @@ public class Validaciones {
     }
    
    private int validarStock(int stock) {
-    Scanner scanner = new Scanner(System.in);
+    Scanner sc = new Scanner(System.in);
 
     do {
         try {
             System.out.println("Ingresa el stock:");
-            stock = scanner.nextInt();
+            stock = sc.nextInt();
 
             if (stock < 0) {
                 System.out.println("Stock no válido. Por favor, escribe un valor mayor o igual a 0");
@@ -63,7 +63,7 @@ public class Validaciones {
 
         } catch (Exception e) {
             System.out.println("Stock no válido. Solo se aceptan números enteros mayores o iguales a 0");
-            scanner.nextLine();
+            sc.nextLine();
         }
 
     } while (stock < 0);
