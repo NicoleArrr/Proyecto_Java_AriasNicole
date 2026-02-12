@@ -5,6 +5,9 @@ public class marca {
     int id;
     String nombre;
 
+    public marca() {
+    }
+
     public marca(int id, String nombre) {
         this.id = id;
         this.nombre = nombre;

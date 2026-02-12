@@ -1,4 +1,4 @@
-
+/*
 package CONTROLADOR;
 
 import MODELO.celular;
@@ -70,5 +70,28 @@ public class Validaciones {
 
     return stock;
     }
+   
+   private String validarCorreo(String correo) {
+    Scanner sc = new Scanner(System.in);
+
+    do {
+        try {
+            System.out.println("Ingresa el correo:");
+            correo = sc.nextLine();
+
+            if (!correo.contains("@")) {
+                System.out.println("Correo no válido. El correo debe contener @");
+            }
+
+        } catch (Exception e) {
+            System.out.println("Error al leer el correo. Intenta de nuevo.");
+            scanner.nextLine(); // Limpia el buffer
+        }
+
+    } while (!correo.contains("@")); // Repite solo si no contiene @
+
+    return correo;
+}
        
 }
+*/

@@ -18,8 +18,10 @@ public class GestionarMarca implements GestionarMarcaAbs{
     @Override
     public void registrar(marca mrc) {
         try (Connection con = c.conectar()) {
-            PreparedStatement ps = con.prepareStatement("INSERT INTO marca(nombre) values (?)");
+            PreparedStatement ps = con.prepareStatement("INSERT INTO marca(nombre) VALUES (?)");
+            // Asignación de valores a los atributos
             ps.setString(1, mrc.getNombre());
+            
             ps.executeUpdate();
             System.out.println("El registro de la marca se ha completado");
         } catch (SQLException e) {
@@ -31,9 +33,11 @@ public class GestionarMarca implements GestionarMarcaAbs{
     @Override
     public void actualizar(marca mrc, int id) {
         try (Connection con = c.conectar()) {
-            PreparedStatement ps = con.prepareStatement("UPDATE marca SET nombre=? where id=?");
+            PreparedStatement ps = con.prepareStatement("UPDATE marca SET nombre=? WHERE id=?");
+            
             ps.setString(1, mrc.getNombre());
             ps.setInt(2, id);
+            
             ps.executeUpdate();
             System.out.println("La actualización de la marca se ha completado");
         } catch (SQLException e) {
@@ -45,7 +49,8 @@ public class GestionarMarca implements GestionarMarcaAbs{
     public marca buscar(int id) {
         marca m = null;
         try (Connection con = c.conectar()) {
-            PreparedStatement ps = con.prepareStatement("SELECT m.id,m.nombre from marca m where id=?");
+            PreparedStatement ps = con.prepareStatement("SELECT m.id,m.nombre FROM marca m WHERE id=?");
+            
             ps.setInt(1, id);
             ResultSet rs = ps.executeQuery();
 
@@ -63,8 +68,8 @@ public class GestionarMarca implements GestionarMarcaAbs{
     @Override
     public void eliminar(int id) {
         try (Connection con = c.conectar()) {
-            //La usamos cuando queremos hacer una inserción o modificacion a la base de datos.
-            PreparedStatement ps = con.prepareStatement("DELETE FROM marca where id=?");
+            PreparedStatement ps = con.prepareStatement("DELETE FROM marca WHERE id=?");
+            
             ps.setInt(1, id);
             System.out.println("""
                                -------------------
@@ -85,6 +90,7 @@ public class GestionarMarca implements GestionarMarcaAbs{
             } else {
                 System.out.println("La eliminación de la marca ha sido interrumpida");
             }
+            
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
@@ -96,6 +102,7 @@ public class GestionarMarca implements GestionarMarcaAbs{
         try (Connection con = c.conectar()) {
             Statement st = con.createStatement();
             ResultSet rs = st.executeQuery("SELECT * FROM marca");
+            
             while (rs.next()) {
                 marcas.add(new marca(rs.getInt(1), rs.getString(2)));
             }

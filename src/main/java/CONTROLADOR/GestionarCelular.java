@@ -1,4 +1,4 @@
-
+/*
 package CONTROLADOR;
 
 import MODELO.celular;
@@ -33,4 +33,4 @@ public class GestionarCelular implements GestionarCelularAbs{
         celular cel = new celular();
     }return cel;
     
-}
+}*/

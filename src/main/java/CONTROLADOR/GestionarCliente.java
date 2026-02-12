@@ -1,4 +1,4 @@
-
+/*
 package CONTROLADOR;
 
 import MODELO.cliente;
@@ -34,3 +34,4 @@ public class GestionarCliente implements GestionarClienteAbs{
     }
     
 }
+*/
