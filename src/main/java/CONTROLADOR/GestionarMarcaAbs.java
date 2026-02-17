@@ -4,7 +4,7 @@ package CONTROLADOR;
 import MODELO.marca;
 import java.util.ArrayList;
 
-// Esta interface o contrato denota simplemente los métodos s redefinir en la clase GestionarMarca
+// Esta interface o contrato denota simplemente los métodos a redefinir en la clase GestionarMarca
 
 public interface GestionarMarcaAbs {
 

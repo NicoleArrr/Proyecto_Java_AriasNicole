@@ -35,20 +35,7 @@ public class TecnoStore {
             switch (op) {
                 case 1:
                     MenuMarca mm = new MenuMarca();
-                    /*System.out.println("""
-                                       ******************
-                                           MENU MARCA
-                                       ******************
-                                       Escribe la opción
-                                        numérica deseada
-                                       
-                                            1)  Registar
-                                            2)  Actualizar
-                                            3)  Buscar
-                                            4)  Eliminar
-                                            5)  Mostrar
-                                       """);*/
-                    
+                    mm.menu();
                     break;
                 case 2:
                     MenuCelular mc =new MenuCelular();
