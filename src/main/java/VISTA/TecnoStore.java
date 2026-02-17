@@ -2,7 +2,6 @@
 package VISTA;
 
 // import CONTROLADOR.Conexion;
-import CONTROLADOR.GestionarMarca;
 import java.util.Scanner;
 //import CONTROLADOR.Validaciones;
 
@@ -10,7 +9,6 @@ public class TecnoStore {
 
     public static void main(String[] args) {
         // Declarar las clases en variables e importar los paquetes
-        GestionarMarca gm = new GestionarMarca;
         
         int op;
         do {
@@ -36,7 +34,8 @@ public class TecnoStore {
             }
             switch (op) {
                 case 1:
-                    System.out.println("""
+                    MenuMarca mm = new MenuMarca();
+                    /*System.out.println("""
                                        ******************
                                            MENU MARCA
                                        ******************
@@ -48,7 +47,7 @@ public class TecnoStore {
                                             3)  Buscar
                                             4)  Eliminar
                                             5)  Mostrar
-                                       """);
+                                       """);*/
                     
                     break;
                 case 2:

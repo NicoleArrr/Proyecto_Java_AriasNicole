@@ -4,34 +4,45 @@ package VISTA;
 import CONTROLADOR.GestionarMarca;
 import CONTROLADOR.GestionarMarcaAbs;
 import MODELO.marca;
+import CONTROLADOR.Validaciones;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class MenuMarca {
-    GestionarMarca gm = new GestionarMarcaAbs() {
-        @Override
-        public void registrar(marca mrc) {
-            throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    Validaciones v = new Validaciones();
+    GestionarMarcaAbs gm = new GestionarMarca() {
+        
+        private void registrar() {
+            marca m = new marca();
+            System.out.println("Ingrese el nombre de la marca:");
+            m.setNombre(new Scanner(System.in).nextLine());
+            gm.registrar(m);
         }
 
-        @Override
-        public void actualizar(marca mrc, int id) {
-            throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        private void actualizar() {
+            System.out.println("Ingrese el id de la marca correspondiente a la búsqueda");
+            int id = new Scanner(System.in).nextInt();
+            marca m = gm.buscar(id);
+            if (m != null) {
+                System.out.println("Marca" +m+ "encontrada");
+                System.out.println("Ingresa la nueva marca");
+                m.setNombre(new Scanner(System.in).nextLine());
+                gm.actualizar(m, id);
+            } else {
+                    System.out.println("Error en la búsqueda, intenta de nuevo");
+                }  
         }
 
-        @Override
-        public void eliminar(int id) {
-            throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        private void eliminar() {
+            
         }
 
-        @Override
         public ArrayList<marca> listar() {
-            throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+            
         }
 
-        @Override
-        public marca buscar(int id) {
-            throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        public marca buscar() {
+        
         }
     };
 }

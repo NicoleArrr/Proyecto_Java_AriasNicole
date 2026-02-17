@@ -1,4 +1,4 @@
-/*
+
 package CONTROLADOR;
 
 import MODELO.celular;
@@ -15,7 +15,7 @@ public class Validaciones {
                System.out.println(mensaje);
                op = new Scanner(System.in).nextInt();
                while (op < minvalor || op > maxvalor){
-                   System.out.println("Opción no válida \n Por favor, escribe una opción numérica 1,2 o 3");
+                   System.out.println("Opción no válida \n Por favor, escribe una opción numérica 0,1,2,3,4 o 5");
                    op = new Scanner(System.in).nextInt();
                    boleanito = true;
                }
@@ -27,7 +27,7 @@ public class Validaciones {
        return op;
    }
    
-   private double validarPrecio(double precio) {
+   public double validarPrecio(double precio) {
     Scanner sc = new Scanner(System.in);
 
     do {
@@ -49,7 +49,7 @@ public class Validaciones {
     return precio;
     }
    
-   private int validarStock(int stock) {
+   public int validarStock(int stock) {
     Scanner sc = new Scanner(System.in);
 
     do {
@@ -71,27 +71,23 @@ public class Validaciones {
     return stock;
     }
    
-   private String validarCorreo(String correo) {
+   public String validarCorreo(String correo) {
     Scanner sc = new Scanner(System.in);
 
     do {
         try {
-            System.out.println("Ingresa el correo:");
-            correo = sc.nextLine();
-
             if (!correo.contains("@")) {
-                System.out.println("Correo no válido. El correo debe contener @");
+            System.out.println("Correo no válido. El correo debe contener @");
             }
 
         } catch (Exception e) {
             System.out.println("Error al leer el correo. Intenta de nuevo.");
-            scanner.nextLine(); // Limpia el buffer
+            sc.nextLine();
         }
-
-    } while (!correo.contains("@")); // Repite solo si no contiene @
+        
+    } while (!correo.contains("@"));
 
     return correo;
 }
        
 }
-*/
