@@ -8,13 +8,16 @@ public class celular {
     String modelo, sistema_operativo, gama;
     double precio;
 
-    public celular(marca id_marca, int id, int stock, String modelo, String sistema_operativo, String gama, double precio) {
+    public celular() {
+    }
+    
+    public celular(marca id_marca, int id, String modelo, String sistema_operativo, String gama, int stock, double precio) {
         this.id_marca = id_marca;
         this.id = id;
-        this.stock = stock;
         this.modelo = modelo;
         this.sistema_operativo = sistema_operativo;
         this.gama = gama;
+        this.stock = stock;
         this.precio = precio;
     }
     

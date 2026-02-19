@@ -8,7 +8,6 @@ import java.util.Scanner;
 public class TecnoStore {
 
     public static void main(String[] args) {
-        // Declarar las clases en variables e importar los paquetes
         
         int op;
         do {
@@ -21,11 +20,11 @@ public class TecnoStore {
                                 *  numérica deseada  *
                                 *                    *
                                 * 0)    Salir        *
-                                * 1)Gestionar Marca  *
-                                * 2)Gestionar Celular*
-                                * 3)Gestionar Cliente*
-                                * 4)Gestionar Venta  *
-                                **********************
+                                * 1)Gestion de Marca  *
+                                * 2)Gestion de Celular*
+                                * 3)Gestion de Cliente*
+                                * 4)Gestion de Venta  *
+                                ***********************
                                """);
             op = new Scanner(System.in).nextInt();
             while (op < 0 || op > 5) {
@@ -38,17 +37,21 @@ public class TecnoStore {
                     mm.menu();
                     break;
                 case 2:
-                    MenuCelular mc =new MenuCelular();
-                    e.menu();
+                    MenuCelular mc = new MenuCelular();
+                    mc.menu();
                     break;
                 case 3:
-                    
+                    MenuCliente mcl = new MenuCliente();
+                    mc.menu();
                     break;
                 case 4:
+                    MenuVenta mv = new MenuVenta();
+                    mv.menu();
+                case 5:
                     System.out.println("Gracias por usar nuestro sistema!");
                     break;
             }
         } while (op != 0);
-        System.out.println("Gracias por visitar nuestra tienda y usar el programa \n ¡Vuelve pronto!");
+        System.out.println("Gracias por visitar nuestra tienda y usar el programa \n ¡Te esperamos pronto!");
     }   
 }
